@@ -9,6 +9,10 @@ Maquette statique (HTML, CSS, JavaScript) sans étape de construction, prête po
 - `realisations.html` : planche-contact, filtres, visionneuse avec loupe, avant/après
 - `mentions-legales.html`
 
+- `404.html` : page introuvable, servie automatiquement par Vercel
+
+La maquette est volontairement exclue des moteurs de recherche (`noindex`) pour ne pas concurrencer le site actuel du client. À retirer lors de la mise en production.
+
 ## Bibliothèques hébergées avec le site
 
 GSAP 3.15 (ScrollTrigger, SplitText), Lenis 1.3.27, OGL 1.0.11, polices Instrument Serif, Inter et JetBrains Mono (licence SIL OFL).
