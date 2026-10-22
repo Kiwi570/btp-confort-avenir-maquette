@@ -429,7 +429,7 @@ p { margin: 0; text-wrap: pretty; }
 .map .hq { fill: var(--cuivre-clair); }
 .map text { font-family: var(--f-mono); font-size: 13px; letter-spacing: .08em; fill: currentColor; text-transform: uppercase; }
 .map .graticule { stroke: rgba(220, 231, 245, .12); stroke-width: 1; vector-effect: non-scaling-stroke; fill: none; stroke-dasharray: 2 5; }
-.zone-band { margin-top: clamp(50px, 8vw, 110px); }
+.zone .wrap.zone-band { margin-top: clamp(50px, 8vw, 110px); grid-template-columns: minmax(0, 1fr); }
 .zone-band .visual .frame { --ratio: 21 / 9; }
 
 /* ---------- Confiance : cartouche d'entreprise ---------- */
