@@ -1,27 +1,21 @@
-# BTP Confort Avenir — maquette « Du plan au chantier »
+# BTP Confort Avenir — maquette « Du plan au réel »
 
-Maquette statique (HTML, CSS, JavaScript) sans étape de construction, prête pour Vercel.
+Site statique (HTML, CSS, JavaScript), sans étape de construction, prêt pour Vercel.
 
-## Pages
+- `index.html` : accueil (intro, calques photo, 5 planches métiers, méthode, avant/après, activités, engagements, confiance, zone, devis)
+- `isolation.html` : page métier type
+- `realisations.html` : galerie filtrable et fiches chantier
+- `mentions-legales.html` : mentions légales et données personnelles
 
-- `index.html` : accueil (ouverture, entreprise, coupe de mur des 5 métiers, avant/après, activités, déroulé, engagements, zone d'intervention, cartouche d'entreprise, devis en 5 étapes)
-- `isolation.html` : page métier type, avec caméra thermique illustrative et les 6 zones
-- `realisations.html` : planche-contact, filtres, visionneuse avec loupe, avant/après
-- `mentions-legales.html`
+## À compléter avec le client
 
-## Bibliothèques hébergées avec le site
+- Téléphone et email : `assets/js/data.js` (champs `telephone` et `email`), affichés partout automatiquement
+- Horaires : `assets/js/data.js` (relevés sur Mappy, à confirmer)
+- Assurance décennale, qualifications, avis, lieux et dates des chantiers : repérés par l’étiquette « à compléter »
 
-GSAP 3.15 (ScrollTrigger, SplitText), Lenis 1.3.27, OGL 1.0.11, polices Instrument Serif, Inter et JetBrains Mono (licence SIL OFL).
+## Technique
 
-## Images
-
-- `assets/img/site/` : photos du site actuel, converties en WebP.
-- `assets/img/grok/` : images générées (Grok ou ChatGPT) à venir. En attendant, chaque emplacement affiche un dessin technique provisoire.
-
-## Animations
-
-Le bouton « Animations réduites » (cartouche, menu et pied de page) et le réglage système « réduire les animations » affichent une version calme et complète. Sans WebGL, des équivalents CSS prennent le relais.
-
-## Éléments à compléter avec le client
-
-Marqués en rouge dans la maquette : durée d'expérience, email, horaires, assurance décennale, médiateur de la consommation, avis Google, lieux et années des chantiers, déroulé type.
+- GSAP 3.15 (ScrollTrigger, SplitText, Flip), Lenis, OGL : hébergés dans `assets/vendor`
+- Effet WebGL « plan vers réel » : `assets/js/gl.js`, avec repli automatique sur les photos si l’appareil est trop lent ou sans WebGL
+- Mode calme : bouton dans l’en-tête et réglage « réduire les animations » du système
+- Formulaire de devis simulé : aucune donnée n’est envoyée
