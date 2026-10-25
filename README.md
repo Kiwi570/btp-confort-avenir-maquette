@@ -9,10 +9,6 @@ Maquette statique (HTML, CSS, JavaScript) sans étape de construction, prête po
 - `realisations.html` : planche-contact, filtres, visionneuse avec loupe, avant/après
 - `mentions-legales.html`
 
-- `404.html` : page introuvable, servie automatiquement par Vercel
-
-La maquette est volontairement exclue des moteurs de recherche (`noindex`) pour ne pas concurrencer le site actuel du client. À retirer lors de la mise en production.
-
 ## Bibliothèques hébergées avec le site
 
 GSAP 3.15 (ScrollTrigger, SplitText), Lenis 1.3.27, OGL 1.0.11, polices Instrument Serif, Inter et JetBrains Mono (licence SIL OFL).
@@ -20,7 +16,7 @@ GSAP 3.15 (ScrollTrigger, SplitText), Lenis 1.3.27, OGL 1.0.11, polices Instrume
 ## Images
 
 - `assets/img/site/` : photos du site actuel, converties en WebP.
-- `assets/img/grok/` : 11 illustrations générées par IA (ChatGPT), recadrées et converties en WebP. Elles illustrent les métiers et ne sont jamais présentées comme des chantiers du client. Si une image manque, l'emplacement affiche un dessin technique provisoire.
+- `assets/img/grok/` : images générées (Grok ou ChatGPT) à venir. En attendant, chaque emplacement affiche un dessin technique provisoire.
 
 ## Animations
 
