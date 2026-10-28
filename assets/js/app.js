@@ -112,6 +112,31 @@
   addEventListener('scroll', () => onScrollHeader(window.scrollY), { passive: true });
   header && header.addEventListener('focusin', () => header.classList.remove('is-hidden'));
 
+  /* ---------- Hauteurs mesurées : en-tête (--entete-h) et barre du bas (--barres-h) ---------- */
+  const bar = qs('[data-bar]');
+  function measureBars() {
+    html.style.setProperty('--entete-h', (header ? header.offsetHeight : 0) + 'px');
+    const shown = bar && getComputedStyle(bar).display !== 'none';
+    html.style.setProperty('--barres-h', (shown ? bar.offsetHeight : 0) + 'px');
+    html.classList.toggle('has-bar', !!shown);
+  }
+  measureBars();
+  if (window.ResizeObserver) { const ro = new ResizeObserver(measureBars); header && ro.observe(header); bar && ro.observe(bar); }
+  addEventListener('resize', measureBars);
+
+  /* Barre du bas : apparaît après le premier écran, masquée quand le formulaire de devis ou le pied de page est à l'écran */
+  if (bar && window.IntersectionObserver) {
+    const seen = new Set();
+    const paintBar = () => bar.classList.toggle('is-off', seen.size > 0 || window.scrollY < window.innerHeight * 0.6);
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) seen.add(e.target); else seen.delete(e.target); });
+      paintBar();
+    });
+    qsa('#devis, .footer').forEach((el) => io.observe(el));
+    paintBar();
+    addEventListener('scroll', paintBar, { passive: true });
+  }
+
   /* ---------- Menu mobile ---------- */
   const menuBtn = qs('.menu-btn');
   const menu = qs('.mobile-menu');

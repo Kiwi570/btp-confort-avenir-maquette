@@ -94,7 +94,10 @@
     if (hasGsap && !calm) {
       const desk = window.matchMedia('(min-width: 900px)').matches;
       if (desk) {
-        ScrollTrigger.create({ trigger: box, start: 'center center', end: '+=140%', pin: qs('#coupe'), scrub: 0.6, onUpdate: (st) => setK(st.progress) });
+        // section entière épinglée en haut : 100svh en colonne, place de l'en-tête réservée (--entete-h)
+        const sec = qs('#coupe');
+        sec.classList.add('is-pinned-coupe');
+        ScrollTrigger.create({ trigger: sec, start: 'top top', end: '+=140%', pin: sec, scrub: 0.6, onUpdate: (st) => setK(st.progress) });
       } else {
         ScrollTrigger.create({ trigger: box, start: 'top 75%', end: 'bottom 25%', scrub: 0.6, onUpdate: (st) => setK(st.progress) });
       }
