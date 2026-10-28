@@ -7,7 +7,7 @@
   const hasGsap = !!window.gsap;
   const html = document.documentElement;
   const useGL = !calm && A.webgl && hasGsap;
-  const glMod = useGL ? import('./gl.js').catch(() => null) : Promise.resolve(null);
+  const glMod = useGL ? import('./gl.js?v=20261028').catch(() => null) : Promise.resolve(null);
   if (useGL) html.classList.add('has-gl');
 
   /* =========================================================
