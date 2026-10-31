@@ -7,7 +7,7 @@
   const hasGsap = !!window.gsap;
   const html = document.documentElement;
   const useGL = !calm && A.webgl && hasGsap;
-  const glMod = useGL ? import('./gl.js?v=20261028-2').catch(() => null) : Promise.resolve(null);
+  const glMod = useGL ? import('./gl.js?v=20261031').catch(() => null) : Promise.resolve(null);
   if (useGL) html.classList.add('has-gl');
 
   /* =========================================================
@@ -186,7 +186,7 @@
       const dist = () => Math.max(0, track.scrollWidth - window.innerWidth);
       const tween = gsap.to(track, {
         x: () => -dist(), ease: 'none',
-        scrollTrigger: { trigger: wrapEl, pin: true, scrub: 0.8, start: 'top top', end: () => '+=' + dist(), invalidateOnRefresh: true, anticipatePin: 1 },
+        scrollTrigger: { trigger: wrapEl, pin: true, scrub: 0.8, start: 'top top', end: () => '+=' + dist(), invalidateOnRefresh: true },
       });
       planches.forEach((pl) => {
         ScrollTrigger.create({ trigger: pl, containerAnimation: tween, start: 'left 70%', end: 'right 30%', onToggle: (s) => activate(pl, s.isActive) });
